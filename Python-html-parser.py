@@ -7,10 +7,8 @@ url=input("Url adress:   ")
 response=requests.get(url)
 content=response.content
 soup=BeautifulSoup(content,"html.parser")
-element=input("""\n\n<element1> element2='element3'\n
-How many element? 1 / 3 :   """)
 
-if(element=="1"):
+def oneElemet():
     tag=str(input("Enter tag:  "))
     i=0
     paragraph=soup.find_all(tag)
@@ -36,7 +34,7 @@ if(element=="1"):
         print("Save successful\n File path: {}".format(os.getcwd()))
         file.close()
 
-elif(element=="3"):
+def twoElement():
     tag=str(input("1st Enter tag:  "))
     tag2=str(input("2nd Enter tag:  "))
     tag3=str(input("3th Enter tag:  "))
@@ -64,8 +62,8 @@ elif(element=="3"):
         print("Save successful\n File path: {}".format(os.getcwd()))
         file.close()
 
-else:
-    answer=input("Wrong choice , Are you sure the site source code will be displayed? Y/N :")
+def sourceCode():
+    answer=input("Are you sure the site source code will be displayed? Y/N :")
     if(answer=="Y" or answer=="y"):
         print(soup)
         answer=input("Do you want to save? Y / N:   ")
