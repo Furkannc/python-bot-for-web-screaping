@@ -8,7 +8,7 @@ response=requests.get(url)
 content=response.content
 soup=BeautifulSoup(content,"html.parser")
 
-def oneElemet():
+def SingleElemet():
     tag=str(input("Enter tag:  "))
     i=0
     paragraph=soup.find_all(tag)
@@ -34,7 +34,7 @@ def oneElemet():
         print("Save successful\n File path: {}".format(os.getcwd()))
         file.close()
 
-def twoElement():
+def MultiElement():
     tag=str(input("1st Enter tag:  "))
     tag2=str(input("2nd Enter tag:  "))
     tag3=str(input("3th Enter tag:  "))
@@ -62,7 +62,7 @@ def twoElement():
         print("Save successful\n File path: {}".format(os.getcwd()))
         file.close()
 
-def sourceCode():
+def SourceCode():
     answer=input("Are you sure the site source code will be displayed? Y/N :")
     if(answer=="Y" or answer=="y"):
         print(soup)
